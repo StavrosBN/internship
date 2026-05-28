@@ -1,0 +1,33 @@
+info:
+  name: ACTIVATE USER
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: http://localhost:8080/realms/myrealm/scim/v2/Users/bca52bcd-64c9-4858-ac18-1f226b931aca
+  headers:
+    - name: Content-Type
+      value: application/scim+json
+  body:
+    type: json
+    data: |-
+      {
+        "schemas": ["urn:ietf:params:scim:api:messages:2.0:PatchOp"],
+        "Operations": [
+          {
+            "op": "replace",
+            "path": "active",
+            "value": true
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBaGJGejFQalp3a1d4RzdiOHZfcUZxcmpMd240ajFxWjFPaUNqN0xmaDVvIn0.eyJleHAiOjE3NzcwMzkwMTQsImlhdCI6MTc3NzAzNzIxNCwianRpIjoidHJydGNjOjE2NjVlZWQ4LWYzZmMtZjM4Ni1mMjQ2LTU4NzcyOWYzMjE2OSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9yZWFsbXMvbXlyZWFsbSIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJkMWNmODU2My0zZjI5LTQ0ZWItYjg3Zi1kOTg3MDVjY2RmZGYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJzY2ltLWNsaWVudCIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1teXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1yZWFsbSIsIm1hbmFnZS11c2VycyJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiY2xpZW50SG9zdCI6IjE3Mi4xNy4wLjEiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6InNlcnZpY2UtYWNjb3VudC1zY2ltLWNsaWVudCIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIiwiY2xpZW50X2lkIjoic2NpbS1jbGllbnQifQ.POU_XZCbEmnHa5kBTw7GCg7MNq8bTwrCMhOYGCw6ylqYoyAZuUUVCShxCNNv0Q6ybC0wU2zwysI-JztJsRpsyX-q7cWFxdrC1Y2l1lp7u-hPJvkitaJTEQwLbQ_9mvH0v8ZtNFeQv11wfelvhOcxO4HQhT0NgbVRvsTVKxxQ7Ptl-aarREC9h-3XG6vOeEsCU0AiqcdYvP-EUx1QcQf8fsQeLXI6FCmyrzivloNKXgmtA_9ghRBDJWitDujImf2dpdTX4V_ZDwPX1XMnXPc1kp7uGUgjFtx7_PPE1H3QWgN6EwZJpSOKho12zyAQBrsPmMfO7EEktcn3t6wzKt077w
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

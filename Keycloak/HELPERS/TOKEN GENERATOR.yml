@@ -1,0 +1,32 @@
+info:
+  name: TOKEN GENERATOR
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/realms/myrealm/protocol/openid-connect/token
+  body:
+    type: form-urlencoded
+    data:
+      - name: grant_type
+        value: client_credentials
+      - name: client_id
+        value: scim-client
+      - name: client_secret
+        value: lp1q7DnMwegYFKksuEvTB55mzzI6LMkn
+      - name: name
+        value: scim-provisioning
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        console.log("keys", Object.keys(globalThis));
+        console.log("bru", typeof bru, bru && Object.keys(bru));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
