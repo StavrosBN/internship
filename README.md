@@ -11,4 +11,4 @@ Worked with CI/CD Technologies, like Jenkins, Docker. Docker was a really useful
 Worked with Monitoring applications, like ELK. ELK was my first interaction with automation testing. Creating Users and assigning roles was the main test.
 
 Worked with Distributed data applications, like Kafka. The final tests were on an induction application my colleague made. This application focused on sending SOAP messages in Kafka and later use Kafka UI. 
-With this app I got used to coding for automation testing, firstly on HTTP Requests and later on Selenium, for the UI.
+With this app I got used to coding for automation testing, firstly on API Calls and later on Selenium, for the UI.
